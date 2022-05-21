@@ -12,7 +12,7 @@ public class DateUtilsTest {
 	public void returnTrueForFutureDates() {
 		
 		LocalDate date = LocalDate.of(2030, 01, 01);
-		Assert.assertTrue(DateUtils.isEqualOrFutureDate(date));
+		Assert.assertFalse(DateUtils.isEqualOrFutureDate(date));
 		
 		Boolean validDate = DateUtils.isEqualOrFutureDate(date);		
 		Assert.assertEquals(validDate, true);
