@@ -56,6 +56,15 @@ pipeline {
 				sh 'docker-compose up -d'
 			}
 		}
+			stage ('Health Check') {
+			steps {
+				dir ('health-check') {
+					sleep(5)
+					git credentialsId: 'github_login', url: 'https://github.com/yorae39/health-check'
+					sh 'mvn test'
+				}	
+			}
+		}
 	}
 	
 }
