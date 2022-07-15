@@ -56,7 +56,7 @@ pipeline {
 				sh 'docker-compose up -d'
 			}
 		}
-			stage ('Health Check') {
+		stage ('Health Check') {
 			steps {
 				dir ('health-check') {
 					sleep(5)
